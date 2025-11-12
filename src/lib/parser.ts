@@ -36,13 +36,6 @@ export class SpecificationParser {
   async enhance(spec: Partial<LandingPageSpec>): Promise<LandingPageSpec> {
     return this.provider.enhance(spec);
   }
-
-  /**
-   * Generate copy variations for specific sections
-   */
-  async generateCopy(section: string, context: Record<string, unknown>): Promise<string[]> {
-    return this.provider.generateCopy(section, context);
-  }
 }
 
 /**

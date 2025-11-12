@@ -1,21 +1,10 @@
 /**
  * WebWiz Component Library
  *
- * Central export point for all reusable components and the theme system.
+ * Central export point for all reusable components.
  * This module provides a comprehensive component library for building
- * customizable landing pages with theme support.
+ * customizable landing pages.
  */
-
-// Theme system exports
-export {
-  type Theme,
-  minimalTheme,
-  boldTheme,
-  elegantTheme,
-  createTheme,
-  getThemeByName,
-  getAllThemes,
-} from './theme';
 
 // Component exports
 export { default as Hero } from './Hero';

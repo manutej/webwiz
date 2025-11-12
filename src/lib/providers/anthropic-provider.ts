@@ -84,46 +84,6 @@ Return ONLY valid JSON matching the specification format.`;
   }
 
   /**
-   * Generate copy variations for specific sections
-   */
-  async generateCopy(section: string, context: Record<string, unknown>): Promise<string[]> {
-    const prompt = this.buildCopyPrompt(section, context);
-
-    const message = await this.client.messages.create({
-      model: this.model,
-      max_tokens: 1024,
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
-    });
-
-    const response = message.content[0];
-    if (response.type !== 'text') {
-      throw new Error('Unexpected response type from Claude');
-    }
-
-    // Extract array of variations from response
-    try {
-      const jsonMatch = response.text.match(/```json\n([\s\S]*?)\n```/);
-      const jsonText = jsonMatch ? jsonMatch[1] : response.text;
-      const parsed = JSON.parse(jsonText);
-
-      if (Array.isArray(parsed)) {
-        return parsed;
-      } else if (parsed.variations && Array.isArray(parsed.variations)) {
-        return parsed.variations;
-      }
-
-      throw new Error('Response is not an array of variations');
-    } catch (error) {
-      throw new Error(`Failed to parse copy variations: ${error}`);
-    }
-  }
-
-  /**
    * Build prompt for parsing natural language input
    */
   private buildParsePrompt(input: NaturalLanguageInput): string {
@@ -209,25 +169,6 @@ Return ONLY valid JSON matching this exact schema:
 }
 
 Return ONLY the JSON, no additional text.`;
-  }
-
-  /**
-   * Build prompt for generating copy variations
-   */
-  private buildCopyPrompt(section: string, context: Record<string, unknown>): string {
-    return `You are an expert copywriter. Generate 3 compelling variations for the ${section} section of a landing page.
-
-Context:
-${JSON.stringify(context, null, 2)}
-
-Guidelines:
-- Make each variation unique and compelling
-- Focus on benefits and emotional triggers
-- Use action-oriented language
-- Vary the tone and approach across variations
-
-Return ONLY a JSON array of 3 string variations:
-["variation 1", "variation 2", "variation 3"]`;
   }
 
   /**

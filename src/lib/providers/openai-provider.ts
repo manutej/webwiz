@@ -94,49 +94,6 @@ Return valid JSON matching the specification format.`;
   }
 
   /**
-   * Generate copy variations for specific sections
-   */
-  async generateCopy(section: string, context: Record<string, unknown>): Promise<string[]> {
-    const prompt = this.buildCopyPrompt(section, context);
-
-    const completion = await this.client.chat.completions.create({
-      model: this.model,
-      messages: [
-        {
-          role: 'system',
-          content: 'You are an expert copywriter. You always respond with valid JSON.',
-        },
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
-      response_format: { type: 'json_object' },
-      temperature: 0.9,
-    });
-
-    const responseText = completion.choices[0]?.message?.content;
-    if (!responseText) {
-      throw new Error('No response from OpenAI');
-    }
-
-    // Extract array of variations from response
-    try {
-      const parsed = JSON.parse(responseText);
-
-      if (Array.isArray(parsed.variations)) {
-        return parsed.variations;
-      } else if (Array.isArray(parsed)) {
-        return parsed;
-      }
-
-      throw new Error('Response does not contain variations array');
-    } catch (error) {
-      throw new Error(`Failed to parse copy variations: ${error}`);
-    }
-  }
-
-  /**
    * Build prompt for parsing natural language input
    */
   private buildParsePrompt(input: NaturalLanguageInput): string {
@@ -212,27 +169,6 @@ Return a JSON object with this exact structure:
     "description": "string",
     "keywords": ["string"]
   }
-}`;
-  }
-
-  /**
-   * Build prompt for generating copy variations
-   */
-  private buildCopyPrompt(section: string, context: Record<string, unknown>): string {
-    return `Generate 3 compelling variations for the ${section} section of a landing page.
-
-Context:
-${JSON.stringify(context, null, 2)}
-
-Guidelines:
-- Make each variation unique and compelling
-- Focus on benefits and emotional triggers
-- Use action-oriented language
-- Vary the tone and approach across variations
-
-Return a JSON object with a "variations" array containing 3 strings:
-{
-  "variations": ["variation 1", "variation 2", "variation 3"]
 }`;
   }
 

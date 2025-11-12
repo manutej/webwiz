@@ -16,11 +16,6 @@ export interface AIProvider {
    * Enhance existing specification with AI-generated improvements
    */
   enhance(spec: Partial<LandingPageSpec>): Promise<LandingPageSpec>;
-
-  /**
-   * Generate copy variations for specific sections
-   */
-  generateCopy(section: string, context: Record<string, unknown>): Promise<string[]>;
 }
 
 /**

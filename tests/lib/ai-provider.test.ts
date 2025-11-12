@@ -168,26 +168,6 @@ describe('AI Provider Abstraction', () => {
       expect(provider.enhance).toBeDefined();
       expect(typeof provider.enhance).toBe('function');
     });
-
-    it('should generate copy variations (Anthropic)', async () => {
-      const provider = getAIProvider({
-        provider: 'anthropic',
-        apiKey: process.env.ANTHROPIC_API_KEY || 'test-key',
-      });
-
-      expect(provider.generateCopy).toBeDefined();
-      expect(typeof provider.generateCopy).toBe('function');
-    });
-
-    it('should generate copy variations (OpenAI)', async () => {
-      const provider = getAIProvider({
-        provider: 'openai',
-        apiKey: process.env.OPENAI_API_KEY || 'test-key',
-      });
-
-      expect(provider.generateCopy).toBeDefined();
-      expect(typeof provider.generateCopy).toBe('function');
-    });
   });
 
   describe('Provider Output Compatibility', () => {
@@ -212,8 +192,6 @@ describe('AI Provider Abstraction', () => {
       expect(openaiProvider.parse).toBeDefined();
       expect(anthropicProvider.enhance).toBeDefined();
       expect(openaiProvider.enhance).toBeDefined();
-      expect(anthropicProvider.generateCopy).toBeDefined();
-      expect(openaiProvider.generateCopy).toBeDefined();
     });
   });
 });
