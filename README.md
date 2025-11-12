@@ -2,6 +2,12 @@
 
 **AI-Powered Landing Page Generator** - Create beautiful, modern landing pages from natural language descriptions.
 
+[![CI](https://github.com/manutej/webwiz/workflows/CI/badge.svg)](https://github.com/manutej/webwiz/actions)
+[![Tests](https://img.shields.io/badge/tests-119%20passing-brightgreen)](https://github.com/manutej/webwiz)
+[![Coverage](https://img.shields.io/badge/coverage-parser%3A%2095%25%20%7C%20generator%3A%20100%25-brightgreen)](https://github.com/manutej/webwiz)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Turn your business idea into a professional website in minutes, not weeks. Simply describe your business in plain English, and WebWiz will generate a complete Next.js landing page with modern design, compelling copy, and deployment-ready code.
 
 ---
