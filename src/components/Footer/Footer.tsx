@@ -97,6 +97,9 @@ const Footer: React.FC<FooterProps> = ({
                   </a>
                 </p>
               )}
+              {contact.phone && (
+                <p className="mb-2 text-gray-900 font-bold">{contact.phone}</p>
+              )}
               {contact.social && Object.keys(contact.social).length > 0 && (
                 <div className="flex space-x-6 justify-center md:justify-end mt-4">
                   {Object.entries(contact.social).map(([platform, url]) => (

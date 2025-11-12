@@ -314,7 +314,7 @@ describe('Footer', () => {
       expect(screen.queryByRole('link', { name: 'github' })).not.toBeInTheDocument();
     });
 
-    it('should not display phone in split variant', () => {
+    it('should display phone in split variant', () => {
       render(
         <Footer
           businessName="Acme Corp"
@@ -327,8 +327,8 @@ describe('Footer', () => {
         />
       );
 
-      // Split variant doesn't show phone number
-      expect(screen.queryByText('+1-555-0123')).not.toBeInTheDocument();
+      // Split variant now shows phone number (updated in Phase 3)
+      expect(screen.getByText('+1-555-0123')).toBeInTheDocument();
     });
   });
 
