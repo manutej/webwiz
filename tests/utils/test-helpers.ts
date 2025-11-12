@@ -321,6 +321,8 @@ export const generators = {
         secondary: '#FFFFFF',
         accent: '#666666',
       },
+      font: 'modern',
+      template: 'minimal',
       meta: {
         title: 'Test App',
         description: 'Test app description',

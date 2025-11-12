@@ -190,7 +190,7 @@ export const ecommerceSpec: LandingPageSpec = {
   },
 
   font: 'playful',
-  template: 'elegant',
+  template: 'minimal',
 
   meta: {
     title: 'StyleHub - Sustainable Fashion from Ethical Brands',
@@ -347,6 +347,9 @@ export const minimalSpec: LandingPageSpec = {
     accent: '#666666',
   },
 
+  font: 'modern',
+  template: 'minimal',
+
   meta: {
     title: 'MiniApp',
     description: 'A minimal application.',
@@ -442,7 +445,7 @@ export const maximalSpec: LandingPageSpec = {
   },
 
   font: 'professional',
-  template: 'creative',
+  template: 'bold',
 
   meta: {
     title: 'TechVenture Analytics - Enterprise Analytics & BI Platform | Real-Time Intelligence',
@@ -542,7 +545,7 @@ export const healthcareProviderSpec: LandingPageSpec = {
   },
 
   font: 'professional',
-  template: 'elegant',
+  template: 'minimal',
 
   meta: {
     title: 'MedConnect Telemedicine - See a Doctor Online 24/7',
