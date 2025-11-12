@@ -190,19 +190,19 @@ exports[`CreativeTemplate > rendering > should match snapshot 1`] = `
               </a>
               <a
                 class="text-gray-900 hover:text-gray-600 font-bold uppercase text-sm transition-colors"
-                href="https://dribbble.com/pixelstudios"
+                href="https://instagram.com/pixelstudios"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                dribbble
+                instagram
               </a>
               <a
                 class="text-gray-900 hover:text-gray-600 font-bold uppercase text-sm transition-colors"
-                href="https://behance.net/pixelstudios"
+                href="https://github.com/pixelstudios"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                behance
+                github
               </a>
             </div>
           </div>

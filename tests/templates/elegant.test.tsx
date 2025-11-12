@@ -55,7 +55,7 @@ const mockSpec: LandingPageSpec = {
     secondary: '#D4AF37',  // Gold
     accent: '#F5F5DC',     // Cream
   },
-  font: 'serif',
+  font: 'classic',
   template: 'elegant',
   meta: {
     title: 'Luxe Boutique - Timeless Elegance',

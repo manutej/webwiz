@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { getAIProvider, getAIProviderFromEnv, AIProviderConfig } from '@/lib/ai-provider';
 import { AnthropicProvider } from '@/lib/providers/anthropic-provider';
 import { OpenAIProvider } from '@/lib/providers/openai-provider';

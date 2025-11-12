@@ -47,8 +47,8 @@ const mockSpec: LandingPageSpec = {
     address: '789 Design District, Austin',
     social: {
       twitter: 'https://twitter.com/pixelstudios',
-      dribbble: 'https://dribbble.com/pixelstudios',
-      behance: 'https://behance.net/pixelstudios',
+      instagram: 'https://instagram.com/pixelstudios',
+      github: 'https://github.com/pixelstudios',
     },
   },
   colors: {
@@ -157,10 +157,10 @@ describe('CreativeTemplate', () => {
     it('should render social media links', () => {
       render(<CreativeTemplate spec={mockSpec} />);
       const twitterLink = screen.getByRole('link', { name: /twitter/i });
-      const dribbbleLink = screen.getByRole('link', { name: /dribbble/i });
+      const instagramLink = screen.getByRole('link', { name: /instagram/i });
 
       expect(twitterLink).toHaveAttribute('href', 'https://twitter.com/pixelstudios');
-      expect(dribbbleLink).toHaveAttribute('href', 'https://dribbble.com/pixelstudios');
+      expect(instagramLink).toHaveAttribute('href', 'https://instagram.com/pixelstudios');
     });
   });
 
