@@ -4,7 +4,6 @@ exports[`BoldTemplate > rendering > should match snapshot 1`] = `
 <div>
   <div
     class="min-h-screen"
-    style="--color-primary: #FF0080; --color-secondary: #7928CA; --color-accent: #FF4D4D;"
   >
     <section
       class="relative h-screen flex items-center justify-center overflow-hidden"
@@ -46,12 +45,15 @@ exports[`BoldTemplate > rendering > should match snapshot 1`] = `
       >
         <div
           class="grid md:grid-cols-2 lg:grid-cols-3 gap-1 bg-white/10"
+          data-testid="feature-grid"
         >
           <div
             class="p-12 bg-black hover:bg-gray-900 transition-colors group"
+            data-testid="feature-item"
           >
             <div
               class="text-6xl mb-6 transform group-hover:scale-110 transition-transform"
+              data-testid="feature-icon"
             >
               🎨
             </div>
@@ -68,9 +70,11 @@ exports[`BoldTemplate > rendering > should match snapshot 1`] = `
           </div>
           <div
             class="p-12 bg-black hover:bg-gray-900 transition-colors group"
+            data-testid="feature-item"
           >
             <div
               class="text-6xl mb-6 transform group-hover:scale-110 transition-transform"
+              data-testid="feature-icon"
             >
               💥
             </div>
@@ -87,9 +91,11 @@ exports[`BoldTemplate > rendering > should match snapshot 1`] = `
           </div>
           <div
             class="p-12 bg-black hover:bg-gray-900 transition-colors group"
+            data-testid="feature-item"
           >
             <div
               class="text-6xl mb-6 transform group-hover:scale-110 transition-transform"
+              data-testid="feature-icon"
             >
               ⭐
             </div>
@@ -108,22 +114,26 @@ exports[`BoldTemplate > rendering > should match snapshot 1`] = `
       </div>
     </section>
     <section
-      class="py-24 px-6"
+      class="relative overflow-hidden py-20 px-6 md:py-32"
       style="background-color: rgb(255, 77, 77);"
     >
       <div
-        class="max-w-4xl mx-auto"
+        class="max-w-5xl mx-auto"
       >
-        <h2
-          class="text-5xl md:text-6xl font-black mb-8 text-white uppercase tracking-tight"
+        <div
+          class="text-center"
         >
-          Our Mission
-        </h2>
-        <p
-          class="text-xl md:text-2xl text-white/90 leading-relaxed font-medium"
-        >
-          We believe in breaking boundaries and challenging the status quo to create something extraordinary.
-        </p>
+          <h2
+            class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-tight tracking-tight"
+          >
+            Our Mission
+          </h2>
+          <p
+            class="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-4xl mx-auto"
+          >
+            We believe in breaking boundaries and challenging the status quo to create something extraordinary.
+          </p>
+        </div>
       </div>
     </section>
     <footer

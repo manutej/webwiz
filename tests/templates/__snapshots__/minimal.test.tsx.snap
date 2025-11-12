@@ -4,7 +4,6 @@ exports[`MinimalTemplate > rendering > should match snapshot 1`] = `
 <div>
   <div
     class="min-h-screen"
-    style="--color-primary: #3B82F6; --color-secondary: #8B5CF6; --color-accent: #10B981;"
   >
     <section
       class="relative overflow-hidden bg-gradient-to-br from-white to-gray-50 py-20 px-6"
@@ -43,12 +42,15 @@ exports[`MinimalTemplate > rendering > should match snapshot 1`] = `
       >
         <div
           class="grid md:grid-cols-3 gap-8"
+          data-testid="feature-grid"
         >
           <div
             class="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-gray-200 transition-all hover:shadow-lg"
+            data-testid="feature-item"
           >
             <div
               class="text-4xl mb-4"
+              data-testid="feature-icon"
             >
               ⚡
             </div>
@@ -65,9 +67,11 @@ exports[`MinimalTemplate > rendering > should match snapshot 1`] = `
           </div>
           <div
             class="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-gray-200 transition-all hover:shadow-lg"
+            data-testid="feature-item"
           >
             <div
               class="text-4xl mb-4"
+              data-testid="feature-icon"
             >
               🔒
             </div>
@@ -84,9 +88,11 @@ exports[`MinimalTemplate > rendering > should match snapshot 1`] = `
           </div>
           <div
             class="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-gray-200 transition-all hover:shadow-lg"
+            data-testid="feature-item"
           >
             <div
               class="text-4xl mb-4"
+              data-testid="feature-icon"
             >
               📈
             </div>
@@ -105,21 +111,26 @@ exports[`MinimalTemplate > rendering > should match snapshot 1`] = `
       </div>
     </section>
     <section
-      class="py-20 px-6 bg-gradient-to-br from-gray-50 to-white"
+      class="relative overflow-hidden py-16 px-6 md:py-24"
     >
       <div
-        class="max-w-4xl mx-auto text-center"
+        class="max-w-4xl mx-auto"
       >
-        <h2
-          class="text-4xl font-bold mb-6 text-gray-900"
+        <div
+          class="p-8 md:p-12 rounded-lg text-center"
+          style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.125) 0%, rgba(139, 92, 246, 0.125) 100%);"
         >
-          About Our Company
-        </h2>
-        <p
-          class="text-lg text-gray-600 leading-relaxed"
-        >
-          We have been providing innovative solutions for over 10 years, helping businesses achieve their goals.
-        </p>
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
+          >
+            About Our Company
+          </h2>
+          <p
+            class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+          >
+            We have been providing innovative solutions for over 10 years, helping businesses achieve their goals.
+          </p>
+        </div>
       </div>
     </section>
     <footer
