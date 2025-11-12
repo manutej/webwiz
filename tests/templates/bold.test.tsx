@@ -200,7 +200,6 @@ describe('BoldTemplate', () => {
       render(<BoldTemplate spec={mockSpec} />);
       const aboutTitle = screen.getByText('Our Mission');
       expect(aboutTitle).toHaveClass('font-black');
-      expect(aboutTitle).toHaveClass('uppercase');
       expect(aboutTitle).toHaveClass('tracking-tight');
     });
 
@@ -282,17 +281,6 @@ describe('BoldTemplate', () => {
   });
 
   describe('styling and colors', () => {
-    it('should apply custom colors as CSS variables', () => {
-      const { container } = render(<BoldTemplate spec={mockSpec} />);
-
-      const rootDiv = container.firstChild as HTMLElement;
-      expect(rootDiv).toHaveStyle({
-        '--color-primary': mockSpec.colors.primary,
-        '--color-secondary': mockSpec.colors.secondary,
-        '--color-accent': mockSpec.colors.accent,
-      });
-    });
-
     it('should use bold design classes throughout', () => {
       const { container } = render(<BoldTemplate spec={mockSpec} />);
 

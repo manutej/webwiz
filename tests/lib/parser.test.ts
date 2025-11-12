@@ -495,7 +495,7 @@ describe('SpecificationParser', () => {
 
       // Act & Assert
       await expect(parser.enhance(partialSpec)).rejects.toThrow(
-        'Failed to parse enhanced specification'
+        'Failed to parse specification'
       );
     });
   });

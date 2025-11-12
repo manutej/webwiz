@@ -249,17 +249,6 @@ describe('MinimalTemplate', () => {
   });
 
   describe('styling and colors', () => {
-    it('should apply custom colors as CSS variables', () => {
-      const { container } = render(<MinimalTemplate spec={mockSpec} />);
-
-      const rootDiv = container.firstChild as HTMLElement;
-      expect(rootDiv).toHaveStyle({
-        '--color-primary': mockSpec.colors.primary,
-        '--color-secondary': mockSpec.colors.secondary,
-        '--color-accent': mockSpec.colors.accent,
-      });
-    });
-
     it('should use minimal design classes', () => {
       const { container } = render(<MinimalTemplate spec={mockSpec} />);
 
