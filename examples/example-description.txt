@@ -1,0 +1,17 @@
+CloudSync Pro - A Modern Cloud Storage Solution
+
+We're building a cloud storage platform designed for modern teams who need fast, secure file synchronization across all their devices.
+
+Our service provides:
+- Lightning-fast sync (files sync in milliseconds)
+- Military-grade encryption for enterprise security
+- Cross-platform support (Windows, Mac, iOS, Android, Web)
+- Team collaboration features with granular permissions
+- Automatic versioning and backup
+- Affordable pricing starting at $5/month
+
+Target audience: Small to medium-sized businesses, creative teams, and remote workers who need reliable cloud storage and collaboration tools.
+
+Brand personality: Modern, trustworthy, and efficient. We value simplicity and speed.
+
+Call-to-action: Start Free Trial

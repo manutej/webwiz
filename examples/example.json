@@ -1,0 +1,72 @@
+{
+  "businessName": "CloudSync Pro",
+  "tagline": "Sync your files across all devices effortlessly",
+  "description": "A modern cloud storage solution that keeps your files synchronized across all your devices with enterprise-grade security and blazing-fast speeds.",
+  "hero": {
+    "headline": "Your Files, Everywhere You Need Them",
+    "subheadline": "Secure cloud storage with instant sync across all your devices. Never lose a file again.",
+    "cta": {
+      "text": "Start Free Trial",
+      "url": "#signup",
+      "style": "primary"
+    },
+    "imageUrl": ""
+  },
+  "features": [
+    {
+      "title": "⚡ Lightning Fast Sync",
+      "description": "Files sync in milliseconds across all your devices. No waiting, no delays.",
+      "icon": "⚡"
+    },
+    {
+      "title": "🔒 Military-Grade Security",
+      "description": "End-to-end encryption keeps your data private and secure at all times.",
+      "icon": "🔒"
+    },
+    {
+      "title": "📱 Cross-Platform",
+      "description": "Works seamlessly on Windows, Mac, iOS, Android, and web browsers.",
+      "icon": "📱"
+    },
+    {
+      "title": "👥 Team Collaboration",
+      "description": "Share files and folders with your team with granular permission controls.",
+      "icon": "👥"
+    },
+    {
+      "title": "🔄 Automatic Backup",
+      "description": "Never lose a file with automatic versioning and backup protection.",
+      "icon": "🔄"
+    },
+    {
+      "title": "💰 Affordable Pricing",
+      "description": "Plans starting at just $5/month with unlimited storage options.",
+      "icon": "💰"
+    }
+  ],
+  "about": {
+    "title": "Built for Modern Teams",
+    "content": "CloudSync Pro was created by a team of cloud storage experts who were frustrated with slow, complicated solutions. We built the tool we wished existed - fast, secure, and incredibly easy to use. Join thousands of teams who trust CloudSync Pro with their most important files."
+  },
+  "contact": {
+    "email": "hello@cloudsyncpro.com",
+    "social": {
+      "twitter": "https://twitter.com/cloudsyncpro",
+      "linkedin": "https://linkedin.com/company/cloudsyncpro"
+    }
+  },
+  "colors": {
+    "primary": "#3b82f6",
+    "secondary": "#8b5cf6",
+    "accent": "#06b6d4",
+    "background": "#ffffff",
+    "text": "#1f2937"
+  },
+  "font": "modern",
+  "template": "minimal",
+  "meta": {
+    "title": "CloudSync Pro - Secure Cloud Storage & File Sync",
+    "description": "Fast, secure cloud storage with instant file synchronization across all devices. Enterprise-grade security, team collaboration, and affordable pricing.",
+    "keywords": ["cloud storage", "file sync", "secure backup", "team collaboration"]
+  }
+}
