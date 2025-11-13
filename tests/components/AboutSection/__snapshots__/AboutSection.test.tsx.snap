@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AboutSection Component > snapshot testing > should match snapshot for bold variant 1`] = `
+<div>
+  <section
+    class="relative overflow-hidden py-20 px-6 md:py-32"
+    style="background-color: rgb(16, 185, 129);"
+  >
+    <div
+      class="max-w-5xl mx-auto"
+    >
+      <div
+        class="text-center"
+      >
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-tight tracking-tight"
+        >
+          Snapshot Test Bold
+        </h2>
+        <p
+          class="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-4xl mx-auto"
+        >
+          Testing snapshot for bold variant
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`AboutSection Component > snapshot testing > should match snapshot for minimal variant 1`] = `
+<div>
+  <section
+    class="relative overflow-hidden py-16 px-6 md:py-24"
+  >
+    <div
+      class="max-w-4xl mx-auto"
+    >
+      <div
+        class="p-8 md:p-12 rounded-lg text-center"
+        style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.125) 0%, rgba(139, 92, 246, 0.125) 100%);"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
+        >
+          Snapshot Test Minimal
+        </h2>
+        <p
+          class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+        >
+          Testing snapshot for minimal variant
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;

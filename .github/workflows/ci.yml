@@ -1,0 +1,169 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, claude/** ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  NODE_VERSION: '18.x'
+
+jobs:
+  lint-and-typecheck:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run TypeScript type check
+        run: npm run type-check
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests with coverage
+        run: npm run test:coverage
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY || 'test-api-key' }}
+
+      - name: Check coverage thresholds
+        run: |
+          echo "Verifying coverage meets 85% threshold..."
+          npm run test:coverage -- --reporter=json --reporter=text
+        env:
+          ANTHROPIC_API_KEY: test-api-key
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          files: ./coverage/coverage-final.json
+          flags: unittests
+          fail_ci_if_error: false
+        continue-on-error: true
+
+  e2e-tests:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+
+      - name: Build CLI
+        run: npm run build:cli
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY || 'test-api-key' }}
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+  build-verification:
+    name: Build Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js app
+        run: npm run build
+        env:
+          ANTHROPIC_API_KEY: test-api-key
+
+      - name: Build CLI
+        run: npm run build:cli
+
+  quality-gate:
+    name: Quality Gate
+    runs-on: ubuntu-latest
+    needs: [lint-and-typecheck, unit-tests, e2e-tests, build-verification]
+    if: always()
+
+    steps:
+      - name: Check job statuses
+        run: |
+          if [[ "${{ needs.lint-and-typecheck.result }}" != "success" ]]; then
+            echo "❌ Lint & Type Check failed"
+            exit 1
+          fi
+          if [[ "${{ needs.unit-tests.result }}" != "success" ]]; then
+            echo "❌ Unit Tests failed"
+            exit 1
+          fi
+          if [[ "${{ needs.e2e-tests.result }}" != "success" ]]; then
+            echo "❌ E2E Tests failed"
+            exit 1
+          fi
+          if [[ "${{ needs.build-verification.result }}" != "success" ]]; then
+            echo "❌ Build Verification failed"
+            exit 1
+          fi
+          echo "✅ All quality gates passed!"
+
+      - name: Post success status
+        if: success()
+        run: |
+          echo "🎉 CI Pipeline: All checks passed"
+          echo "- ✅ Code quality (lint + type check)"
+          echo "- ✅ Unit tests with coverage ≥85%"
+          echo "- ✅ E2E tests"
+          echo "- ✅ Production build"

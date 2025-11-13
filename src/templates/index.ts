@@ -1,12 +1,14 @@
 import MinimalTemplate from './minimal';
 import BoldTemplate from './bold';
+import ElegantTemplate from './elegant';
+import CreativeTemplate from './creative';
 import { LandingPageSpec } from '@/types';
 
 export const templates = {
   minimal: MinimalTemplate,
   bold: BoldTemplate,
-  elegant: MinimalTemplate, // Can be replaced with a dedicated elegant template
-  creative: BoldTemplate,   // Can be replaced with a dedicated creative template
+  elegant: ElegantTemplate,
+  creative: CreativeTemplate,
 };
 
 export type TemplateName = keyof typeof templates;

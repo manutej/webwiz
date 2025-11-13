@@ -43,3 +43,9 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# Testing
+playwright-report/
+E2E_TEST_SUMMARY.md
+coverage/
+test-results/

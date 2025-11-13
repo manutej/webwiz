@@ -2,11 +2,24 @@ import React from 'react';
 import { LandingPageSpec } from '@/types';
 import { Hero, FeatureGrid, AboutSection, Footer, TemplateLayout } from '@/components';
 
-interface BoldTemplateProps {
+interface CreativeTemplateProps {
   spec: LandingPageSpec;
 }
 
-export default function BoldTemplate({ spec }: BoldTemplateProps) {
+/**
+ * Creative Template - Bold and vibrant design
+ *
+ * Design Philosophy:
+ * - Vibrant red, teal, and yellow color palette
+ * - Modern sans-serif typography
+ * - Full-screen hero for maximum impact
+ * - Asymmetric layouts with geometric elements
+ * - Bold, energetic aesthetic
+ *
+ * Target Audience: Creative agencies, startups, tech companies,
+ * modern brands, innovators, digital-first businesses
+ */
+export default function CreativeTemplate({ spec }: CreativeTemplateProps) {
   const { hero, features, about, colors, businessName, tagline, contact } = spec;
 
   return (
